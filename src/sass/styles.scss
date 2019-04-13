@@ -20,31 +20,39 @@ body {
     width: 50%;
     height: 70vh;
     transform-origin: 90% 60%;
-    background: #232f36;
+    // background: #232f36;
     
-    & > * {
+    & * {
         z-index: 0;
         position: absolute;
         left: 0;
         opacity: 1;
-        border: 1px dashed transparent;
     }
-
-    & > .sensitiv {
+    
+    & .sensitiv {
         box-shadow: 0 0 0 rgba(0,0,0,0);
-        transition: .5s;
+        border: 2px dashed transparent;
+        transition: .5s ease;
 
         &:hover {
             z-index: 1;
-            transform: translate(5px, -10px);
-            box-shadow: -1em 2em 2em rgba(0,0,0,.3);
-            border: 2px dashed rgba(253, 0, 0, 0.8)
+            transform: translate(10px, -10px);
+            box-shadow: -1em 2em 4em rgba(0,0,0,.3);
+            border: 2px dashed rgba(0, 131, 253, 0.8)
         }
     }
 
     .navi { top: 98px; left: 44px; }
     .header-image { top: 128px; left: 44px; }
-    .content-area { top: 285px; left: 44px; }
+    
+    .content-area { top: 285px; left: 44px;
+        width: 375px; height: 408px; 
+        background: url(../img/content-area-background.png) 100%;
+    }
+    .article { top: 40px; left: 3px; };
+    .galery { top: 200px; left: 3px; };
+    .reviews { top: 340px; left: 3px; };
+    
     .social { top: 285px; left: 426px; }
     .navigate { top: 429px; left: 426px; }
 
