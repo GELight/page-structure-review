@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "build": "mkdir -p dist && npm run copy-res && npm run build-sass",
-    "copy-res": "cpx src/*.html dist",
-    "build-sass": "node-sass src/assets/sass/styles.scss dist/style.css --output-style compressed"
+    "build": "npm run clean && npm run assemble && npm run copy-res && npm run build-sass",
+    "clean": "rm -rf dist",
+    "assemble": "mkdir -p dist",
+    "copy-res": "cp src/*.html dist && cp -R src/assets dist/static",
+    "build-sass": "node-sass src/sass/styles.scss dist/static/css/styles.css --output-style compressed --watch"
   },
   "repository": {
     "type": "git",
