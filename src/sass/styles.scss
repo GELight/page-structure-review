@@ -37,8 +37,16 @@ body {
         &:hover {
             z-index: 1;
             transform: translate(10px, -10px);
-            box-shadow: -1em 2em 4em rgba(0,0,0,.3);
-            border: 2px dashed rgba(0, 131, 253, 0.8)
+            box-shadow: -1em 1em 1em rgba(0, 0, 0, 0.3);
+            border: 2px dashed rgb(253, 0, 0);
+            opacity: 1;
+
+            & .sensitiv:hover {
+                border: 2px dashed rgb(0, 67, 253);
+                & .sensitiv:hover {
+                    border: 2px dashed rgb(253, 0, 0);
+                }
+            }
         }
     }
 
@@ -46,11 +54,21 @@ body {
     .header-image { top: 128px; left: 44px; }
     
     .content-area { top: 285px; left: 44px;
-        width: 375px; height: 408px; 
+        width: 375px; height: 408px;
         background: url(../img/content-area-background.png) 100%;
     }
     .article { top: 40px; left: 3px; };
-    .galery { top: 200px; left: 3px; };
+    .galery {
+        width: 368px; height: 124px;
+        background: url(../img/content-area-galery-background.png) 100%;
+        top: 200px; left: 3px;
+        .galery-item {
+            &:nth-child(1) { top: 23px; left: 10px; }
+            &:nth-child(2) { top: 23px; left: 100px; }
+            &:nth-child(3) { top: 23px; left: 190px; }
+            &:nth-child(4) { top: 23px; left: 280px; }
+        };
+    };
     .reviews { top: 340px; left: 3px; };
     
     .social { top: 285px; left: 426px; }
